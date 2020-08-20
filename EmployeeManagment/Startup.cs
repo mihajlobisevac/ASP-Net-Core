@@ -23,6 +23,7 @@ namespace EmployeeManagment
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
 
@@ -36,6 +37,8 @@ namespace EmployeeManagment
             app.UseRouting();
 
             app.UseFileServer();
+
+            app.UseMvcWithDefaultRoute();
 
             app.UseEndpoints(endpoints =>
             {
