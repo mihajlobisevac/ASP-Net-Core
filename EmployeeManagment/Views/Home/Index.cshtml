@@ -16,9 +16,11 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Department</td>
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Department</td>
+                </tr>
             }
         </tbody>
     </table>
