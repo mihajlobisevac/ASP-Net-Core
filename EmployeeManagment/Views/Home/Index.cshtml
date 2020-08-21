@@ -3,27 +3,30 @@
 @{
     ViewBag.Title = "Employee List";
 }
+
 <div class="row justify-content-center m-3">
     <div class="col-sm-11">
-        <table class="table table-borderless" style="background: #32e0c4; color: #222831;">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Department</th>
-                </tr>
-            </thead>
-            <tbody style="background: #393e46; color: #eeeeee;">
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Name</td>
-                        <td>@item.Department</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <div class="card-deck">
+            @foreach (var item in Model)
+            {
+                <div class="card m-3 bg-dark" style="background: #393e46;">
+                    <div class="card-header">
+                        <h1 style="color: #32e0c4;">@item.Name</h1>
+                    </div>
+                    <div class="card-body text-center">
+                        <img class="card-img-top" src="~/svg/undraw_profile_pic_ic5t.svg" />
+                        <hr />
+                        <h4>Id: <span style="color: #32e0c4;">@item.Id</span></h4>
+                        <h4>Email: <span style="color: #32e0c4;">@item.Email</span></h4>
+                        <h4>Department: <span style="color: #32e0c4;">@item.Department</span></h4>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-primary">View</a>
+                        <a href="#" class="btn btn-primary">Edit</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </div>
-
