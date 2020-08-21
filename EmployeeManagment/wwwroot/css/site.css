@@ -1,0 +1,20 @@
+﻿/*
+    white:      #eeeeee
+    green:      #32e0c4
+    grey:       #393e46
+    dark grey:  #222831
+*/
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: #222831;
+    color: #eeeeee;
+}
+
+.btn{
+    width: 6em;
+}
+
+img {
+    max-height: 20em;
+}

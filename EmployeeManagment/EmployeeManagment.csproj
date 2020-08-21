@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\svg\" />
   </ItemGroup>
 
 </Project>
