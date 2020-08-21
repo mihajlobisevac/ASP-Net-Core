@@ -6,16 +6,16 @@
 
 <div class="row justify-content-center m-3">
     <div class="col-sm-8">
-        <div class="card bg-dark" style="background: #393e46;">
+        <div class="card bg-dark thm-gray">
             <div class="card-header">
-                <h1 style="color: #32e0c4;">@Model.Employee.Name</h1>
+                <h1 class="clr-green">@Model.Employee.Name</h1>
             </div>
             <div class="card-body text-center">
                 <img class="card-img-top" src="~/svg/undraw_profile_pic_ic5t.svg" asp-append-version="true" />
                 <hr />
-                <h4>Id: <span style="color: #32e0c4;">@Model.Employee.Id</span></h4>
-                <h4>Email: <span style="color: #32e0c4;">@Model.Employee.Email</span></h4>
-                <h4>Department: <span style="color: #32e0c4;">@Model.Employee.Department</span></h4>
+                <h4>Id: <span class="clr-green">@Model.Employee.Id</span></h4>
+                <h4>Email: <span class="clr-green">@Model.Employee.Email</span></h4>
+                <h4>Department: <span class="clr-green">@Model.Employee.Department</span></h4>
             </div>
             <div class="card-footer text-center">
                 <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Back</a>

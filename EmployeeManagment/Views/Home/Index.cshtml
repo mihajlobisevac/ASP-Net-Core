@@ -9,16 +9,16 @@
         <div class="card-deck">
             @foreach (var item in Model)
             {
-                <div class="card m-3 bg-dark" style="background: #393e46;">
+                <div class="card m-3 bg-dark bkg-gray">
                     <div class="card-header">
                         <h1 style="color: #32e0c4;">@item.Name</h1>
                     </div>
                     <div class="card-body text-center">
                         <img class="card-img-top" src="~/svg/undraw_profile_pic_ic5t.svg" asp-append-version="true" />
                         <hr />
-                        <h4>Id: <span style="color: #32e0c4;">@item.Id</span></h4>
-                        <h4>Email: <span style="color: #32e0c4;">@item.Email</span></h4>
-                        <h4>Department: <span style="color: #32e0c4;">@item.Department</span></h4>
+                        <h4>Id: <span class="clr-green">@item.Id</span></h4>
+                        <h4>Email: <span class="clr-green">@item.Email</span></h4>
+                        <h4>Department: <span class="clr-green">@item.Department</span></h4>
                     </div>
                     <div class="card-footer text-center">
                         <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">View</a>

@@ -1,8 +1,8 @@
 ﻿/*
     white:      #eeeeee
     green:      #32e0c4
-    grey:       #393e46
-    dark grey:  #222831
+    gray:       #393e46
+    dark gray:  #222831
 */
 
 body {
@@ -17,4 +17,57 @@ body {
 
 img {
     max-height: 20em;
+}
+
+.thm-white {
+    background: #eeeeee;
+    color: #222831;
+}
+
+.thm-green {
+    background: #32e0c4;
+    color: #eeeeee;
+}
+
+.thm-gray {
+    background: #393e46;
+    color: #eeeeee;
+}
+
+.thm-darkgray {
+    background: #222831;
+    color: #eeeeee;
+}
+
+.clr-white {
+    color: #eeeeee;
+}
+
+.clr-green {
+    color: #32e0c4;
+}
+
+.clr-gray {
+    color: #393e46;
+}
+
+.clr-darkgray {
+    color: #222831;
+}
+
+
+.bkg-white {
+    background: #eeeeee;
+}
+
+.bkg-green {
+    background: #32e0c4;
+}
+
+.bkg-gray {
+    background: #393e46;
+}
+
+.bkg-darkgray {
+    background: #222831;
 }
