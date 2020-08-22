@@ -4,29 +4,25 @@
     ViewBag.Title = "Employee List";
 }
 
-<div class="row justify-content-center m-3">
-    <div class="col-sm-11">
-        <div class="card-deck">
-            @foreach (var item in Model)
-            {
-                <div class="card m-3 bg-dark bkg-gray">
-                    <div class="card-header">
-                        <h1 style="color: #32e0c4;">@item.Name</h1>
-                    </div>
-                    <div class="card-body text-center">
-                        <img class="card-img-top" src="~/svg/undraw_profile_pic_ic5t.svg" asp-append-version="true" />
-                        <hr />
-                        <h4>Id: <span class="clr-green">@item.Id</span></h4>
-                        <h4>Email: <span class="clr-green">@item.Email</span></h4>
-                        <h4>Department: <span class="clr-green">@item.Department</span></h4>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">View</a>
-                        <a href="#" class="btn btn-primary">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-            }
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+        <div class="card m-3 bkg-gray">
+            <div class="card-header">
+                <h1 style="color: #32e0c4;">@item.Name</h1>
+            </div>
+            <div class="card-body text-center">
+                <img class="card-img-top" src="~/svg/undraw_profile_pic_ic5t.svg" asp-append-version="true" />
+                <hr />
+                <h4>Id: <span class="clr-green">@item.Id</span></h4>
+                <h4>Email: <span class="clr-green">@item.Email</span></h4>
+                <h4>Department: <span class="clr-green">@item.Department</span></h4>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">View</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
         </div>
-    </div>
+    }
 </div>

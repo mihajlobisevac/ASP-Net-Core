@@ -42,6 +42,9 @@ img {
 .clr-white {
     color: #eeeeee;
 }
+    .clr-white:hover {
+        color: #32e0c4;
+    }
 
 .clr-green {
     color: #32e0c4;
