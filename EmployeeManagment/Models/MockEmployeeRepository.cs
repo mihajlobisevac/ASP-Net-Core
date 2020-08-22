@@ -11,9 +11,9 @@ namespace EmployeeManagment.Models
 
         public MockEmployeeRepository()
         {
-            Employees.Add(new Employee { Id = 1, Name = "Will", Email = "will@gmail.com", Department = "Dept 11" });
-            Employees.Add(new Employee { Id = 2, Name = "Stone", Email = "stone@gmail.com", Department = "Dept 43" });
-            Employees.Add(new Employee { Id = 3, Name = "Clock", Email = "clock@gmail.com", Department = "Dept 6" });
+            Employees.Add(new Employee { Id = 1, Name = "Will", Email = "will@gmail.com", Department = EDepartments.HR });
+            Employees.Add(new Employee { Id = 2, Name = "Stone", Email = "stone@gmail.com", Department = EDepartments.IT });
+            Employees.Add(new Employee { Id = 3, Name = "Clock", Email = "clock@gmail.com", Department = EDepartments.Payroll });
         }
 
         public Employee GetEmployee(int id)
