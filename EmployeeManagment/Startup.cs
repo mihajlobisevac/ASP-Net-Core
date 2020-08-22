@@ -30,7 +30,7 @@ namespace EmployeeManagment
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
-            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+            services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
         }
 
 
