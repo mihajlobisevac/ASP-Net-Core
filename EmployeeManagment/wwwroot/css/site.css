@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+.h1{
+    font-size: 2rem;
+}
+
 .btn{
     width: 6em;
 }
@@ -26,9 +30,14 @@ body {
         color: #393e46;
     }
 
+.card-min-cards {
+    min-width: 17rem;
+    max-width: 30.5%;
+}
 .img-profile {
     height: 20em;
     width: auto;
+    max-width: 100%;
 }
 
 .ctainer{
