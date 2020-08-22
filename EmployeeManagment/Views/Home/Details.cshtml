@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Employee Details";
+    var imagePath = "~/img/" + (Model.Employee.ImagePath ?? "noimage.svg");
 }
 
 <div class="row justify-content-center m-3">
@@ -11,7 +12,7 @@
                 <h1 class="clr-green">@Model.Employee.Name</h1>
             </div>
             <div class="card-body text-center">
-                <img class="card-img-top" src="~/img/undraw_profile_pic_ic5t.svg" asp-append-version="true" />
+                <img class="card-img-top img-profile" src="@imagePath" asp-append-version="true" />
                 <hr />
                 <h4>Id: <span class="clr-green">@Model.Employee.Id</span></h4>
                 <h4>Email: <span class="clr-green">@Model.Employee.Email</span></h4>

@@ -26,8 +26,9 @@ body {
         color: #393e46;
     }
 
-img {
-    max-height: 20em;
+.img-profile {
+    height: 20em;
+    width: auto;
 }
 
 .ctainer{

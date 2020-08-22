@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\svg\**" />
+    <Content Remove="wwwroot\svg\**" />
+    <EmbeddedResource Remove="wwwroot\svg\**" />
+    <None Remove="wwwroot\svg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\img\" />
-    <Folder Include="wwwroot\svg\" />
   </ItemGroup>
 
   <ItemGroup>
