@@ -16,6 +16,16 @@ body {
     width: 6em;
 }
 
+.btn-success {
+    font-weight: 600;
+    background: #32e0c4;
+    color: #393e46;
+}
+    .btn-success:hover {
+        background: #2AAF99;
+        color: #393e46;
+    }
+
 img {
     max-height: 20em;
 }
