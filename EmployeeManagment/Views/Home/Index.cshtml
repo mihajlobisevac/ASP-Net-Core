@@ -19,9 +19,9 @@
                 <h4>Department: <span class="clr-green">@item.Department</span></h4>
             </div>
             <div class="card-footer text-center">
-                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">View</a>
-                <a href="#" class="btn btn-primary">Edit</a>
-                <a href="#" class="btn btn-danger">Delete</a>
+                <a class="btn m-1 btn-primary" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">View</a>
+                <a class="btn m-1 btn-primary">Edit</a>
+                <a class="btn m-1 btn-danger">Delete</a>
             </div>
         </div>
     }
