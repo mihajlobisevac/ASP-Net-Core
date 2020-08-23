@@ -43,6 +43,8 @@ namespace EmployeeManagment
 
             app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
+            app.UseExceptionHandler("/Error");
+
             app.UseRouting();
 
             app.UseFileServer();
