@@ -30,6 +30,16 @@ body {
         color: #393e46;
     }
 
+.btn-outline-success {
+    color: #32e0c4;
+    border-color: #32e0c4;
+}
+    .btn-outline-success:hover {
+        background-color: #32e0c4;
+        color: #222831;
+        border-color: #32e0c4;
+    }
+
 .card-min-cards {
     min-width: 17rem;
     max-width: 30.5%;
