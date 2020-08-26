@@ -10,6 +10,7 @@ namespace EmployeeManagment.Controllers
 {
     public class ErrorController : Controller
     {
+        [AllowAnonymous]
         [Route("/Error/{statusCode}")]
         public IActionResult HttpStatusCodeHandler(int statusCode)
         {
