@@ -35,8 +35,8 @@
                     {
                         <li class="nav-item">
                             <form method="post" asp-controller="account" asp-action="logout">
-                                <button type="submit" class="nav-link">
-                                    Logout @User.Identity.Name
+                                <button type="submit" class="btn btn-nav nav-link">
+                                    Logout [@(User.Identity.Name)]
                                 </button>
                             </form>
                         </li>

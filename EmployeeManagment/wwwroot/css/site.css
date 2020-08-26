@@ -40,6 +40,12 @@ body {
         border-color: #32e0c4;
     }
 
+.btn-nav{
+    width: auto;
+    background-color: transparent;
+    border: none;
+}
+
 .card-min-cards {
     min-width: 17rem;
     max-width: 30.5%;
