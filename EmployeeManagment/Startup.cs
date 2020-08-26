@@ -26,11 +26,21 @@ namespace EmployeeManagment
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContextPool<AppDbContext>(options => 
+            services.AddDbContextPool<AppDbContext>(options =>
                 options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+                    {
+                        options.Password.RequiredLength = 4;
+                        options.Password.RequiredUniqueChars = 1;
+                        options.Password.RequireNonAlphanumeric = false;
+                        options.Password.RequireDigit = false;
+                        options.Password.RequireLowercase = false;
+                        options.Password.RequireUppercase = false;
+                    })
                     .AddEntityFrameworkStores<AppDbContext>();
+
+
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
