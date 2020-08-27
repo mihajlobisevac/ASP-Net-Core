@@ -4,7 +4,7 @@
     ViewBag.Title = "Edit Role";
 }
 
-<h3>@ViewBag.Title</h3>
+<h3 class="mt-3">@ViewBag.Title</h3>
 
 <form method="post" class="mt-3">
     <div class="form-group row">
@@ -25,7 +25,7 @@
             <button type="submit" class="btn btn-success">
                 Update
             </button>
-            <a asp-controller="administration" asp-action="listroles" class="btn btn-outline-success">
+            <a asp-controller="Administration" asp-action="ListRoles" class="btn btn-outline-success">
                 Cancel
             </a>
         </div>
@@ -50,11 +50,9 @@
             }
         </div>
         <div class="card-footer">
-            <a href="#" class="btn btn-outline-success" style="width: auto">
-                Add Users
-            </a>
-            <a href="#" class="btn btn-outline-success" style="width: auto">
-                Remove User
+            <a asp-controller="Administration" asp-action="EditUsersInRole" asp-route-roleId="@Model.Id"
+               class="btn btn-outline-success" style="width: auto">
+                Add/Remove Users
             </a>
         </div>
     </div>
