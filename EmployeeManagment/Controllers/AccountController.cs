@@ -114,5 +114,14 @@ namespace EmployeeManagment.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("index", "home");
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            ViewBag.ErrorMessage = "You don't have permission to view this page";
+
+            return View("NotFound");
+        }
     }
 }
