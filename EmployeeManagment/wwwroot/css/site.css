@@ -32,6 +32,7 @@ body {
 
 .btn-outline-success {
     color: #32e0c4;
+    background: #393e46;
     border-color: #32e0c4;
 }
     .btn-outline-success:hover {
