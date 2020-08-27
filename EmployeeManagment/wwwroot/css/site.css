@@ -40,6 +40,30 @@ body {
         border-color: #32e0c4;
     }
 
+.btn-primary {
+    font-weight: 600;
+    background: #32DDE0;
+    border-color: #32DDE0;
+    color: #222831;
+}
+
+    .btn-primary:hover {
+        background: #2DC4C6;
+        border-color: #32DDE0;
+        color: #222831;
+    }
+
+.btn-outline-primary {
+    color: #2DC4C6;
+    border-color: #2DC4C6;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #2DC4C6;
+        color: #222831;
+        border-color: #2DC4C6;
+    }
+
 .btn-nav{
     width: auto;
     background-color: transparent;
