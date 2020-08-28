@@ -26,9 +26,20 @@
                        class="btn btn-outline-success">
                         Edit
                     </a>
-                    <button type="submit" class="btn btn-danger">
-                        Delete
-                    </button>
+                    <span id="deleteSpan_@user.Id">
+                        <span class="btn btn-danger" onclick="confirmDelete('@user.Id', true)">
+                            Delete
+                        </span>
+                    </span>
+                    <span id="confirmDeleteSpan_@user.Id" style="display: none">
+                        <span>Are you sure?</span>
+                        <button type="submit" class="btn btn-danger">
+                            Yes
+                        </button>
+                        <span class="btn btn-outline-success" onclick="confirmDelete('@user.Id', false)">
+                            No
+                        </span>
+                    </span>
                 </form>
             </div>
         </div>
@@ -49,4 +60,8 @@ else
             </a>
         </div>
     </div>
+}
+
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
 }
