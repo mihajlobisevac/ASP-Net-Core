@@ -228,19 +228,27 @@ namespace EmployeeManagment.Controllers
             }
             else
             {
-                var result = await roleManager.DeleteAsync(role);
-
-                if (result.Succeeded)
+                try
                 {
+                    var result = await roleManager.DeleteAsync(role);
+
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("ListRoles");
+                    }
+
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+
                     return RedirectToAction("ListRoles");
                 }
-
-                foreach (var error in result.Errors)
+                catch (DbUpdateException)
                 {
-                    ModelState.AddModelError("", error.Description);
+                    ViewBag.ErrorMessage = "There's users under this role";
+                    return View("Error");
                 }
-
-                return RedirectToAction("ListRoles");
             }
         }
 
