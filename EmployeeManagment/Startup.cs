@@ -43,15 +43,15 @@ namespace EmployeeManagment
                     .AddEntityFrameworkStores<AppDbContext>();
 
             services.AddMvc(options => 
-                    {
-                        var policy = new AuthorizationPolicyBuilder()
-                                        .RequireAuthenticatedUser()
-                                        .Build();
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                .RequireAuthenticatedUser()
+                                .Build();
 
-                        options.Filters.Add(new AuthorizeFilter(policy));
+                options.Filters.Add(new AuthorizeFilter(policy));
 
-                        options.EnableEndpointRouting = false;
-                    });
+                options.EnableEndpointRouting = false;
+            });
 
             services.AddAuthorization(options =>
             {
@@ -59,13 +59,13 @@ namespace EmployeeManagment
                     policy => policy.RequireRole("Admin"));
 
                 options.AddPolicy("DeleteRolePolicy",
-                    policy => policy.RequireClaim("Delete Role"));
+                    policy => policy.RequireClaim("Delete Role", "true"));
 
                 options.AddPolicy("EditRolePolicy",
-                    policy => policy.RequireClaim("Edit Role"));
+                    policy => policy.RequireClaim("Edit Role", "true"));
 
                 options.AddPolicy("CreateRolePolicy",
-                    policy => policy.RequireClaim("Create Role"));
+                    policy => policy.RequireClaim("Create Role", "true"));
             });
 
             services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
