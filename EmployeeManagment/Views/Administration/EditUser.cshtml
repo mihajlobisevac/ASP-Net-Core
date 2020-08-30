@@ -65,7 +65,8 @@
             }
         </div>
         <div class="card-footer">
-            <a href="#" class="btn btn-outline-success">
+            <a asp-controller="Administration" asp-action="ManageUserRoles" asp-route-id="@Model.Id" 
+               class="btn btn-outline-success">
                 Manage
             </a>
         </div>
@@ -88,7 +89,8 @@
             }
         </div>
         <div class="card-footer">
-            <a href="#" class="btn btn-outline-success">
+            <a asp-controller="Administration" asp-action="ManageUserClaims" asp-route-id="@Model.Id" 
+               class="btn btn-outline-success">
                 Manage
             </a>
         </div>
