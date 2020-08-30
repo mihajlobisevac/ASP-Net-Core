@@ -42,8 +42,6 @@ namespace EmployeeManagment
                     })
                     .AddEntityFrameworkStores<AppDbContext>();
 
-
-
             services.AddMvc(options => 
                     {
                         var policy = new AuthorizationPolicyBuilder()
@@ -66,9 +64,9 @@ namespace EmployeeManagment
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseStatusCodePagesWithReExecute("/Error/{0}");
+            app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
-            //app.UseExceptionHandler("/Error");
+            app.UseExceptionHandler("/Error");
 
             app.UseRouting();
 
