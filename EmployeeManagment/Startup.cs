@@ -55,17 +55,17 @@ namespace EmployeeManagment
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminRolePolicy",
-                    policy => policy.RequireRole("Admin"));
+                options.AddPolicy("AdminRolePolicy", policy => 
+                    policy.RequireAssertion(context => AuthorizeAdminAccess(context)));
 
-                options.AddPolicy("DeleteRolePolicy",
-                    policy => policy.RequireClaim("Delete Role", "true"));
+                options.AddPolicy("DeleteRolePolicy", policy =>
+                    policy.RequireAssertion(context => AuthorizeAccess(context, "Delete Role")));
 
-                options.AddPolicy("EditRolePolicy",
-                    policy => policy.RequireClaim("Edit Role", "true"));
+                options.AddPolicy("EditRolePolicy", policy =>
+                     policy.RequireAssertion(context => AuthorizeAccess(context, "Edit Role")));
 
-                options.AddPolicy("CreateRolePolicy",
-                    policy => policy.RequireClaim("Create Role", "true"));
+                options.AddPolicy("CreateRolePolicy", policy =>
+                    policy.RequireAssertion(context => AuthorizeAccess(context, "Create Role")));
             });
 
             services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
@@ -98,6 +98,19 @@ namespace EmployeeManagment
                 //    await context.Response.WriteAsync("Hello World!");
                 //});
             });
+        }
+
+        private bool AuthorizeAccess(AuthorizationHandlerContext context, string role)
+        {
+            return context.User.IsInRole("Admin") &&
+                    context.User.HasClaim(claim => claim.Type == role && claim.Value == "true") ||
+                    context.User.IsInRole("Super Admin");
+        }
+
+        private bool AuthorizeAdminAccess(AuthorizationHandlerContext context)
+        {
+            return context.User.IsInRole("Admin") ||
+                    context.User.IsInRole("Super Admin");
         }
     }
 }

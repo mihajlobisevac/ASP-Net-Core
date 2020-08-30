@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagment.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Policy = "AdminRolePolicy")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> roleManager;
