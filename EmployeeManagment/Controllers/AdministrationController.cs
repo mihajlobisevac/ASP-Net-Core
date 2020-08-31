@@ -433,7 +433,7 @@ namespace EmployeeManagment.Controllers
                     ClaimType = claim.Type
                 };
 
-                if (existingUserClaim.Any(c => c.Type == claim.Type && claim.Value == "true"))
+                if (existingUserClaim.Any(c => c.Type == claim.Type && c.Value == "true"))
                 {
                     userClaim.IsSelected = true;
                 }
