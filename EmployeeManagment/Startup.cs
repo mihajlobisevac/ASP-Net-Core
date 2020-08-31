@@ -54,6 +54,12 @@ namespace EmployeeManagment
                 options.EnableEndpointRouting = false;
             });
 
+            services.AddAuthentication().AddGoogle(options => 
+            {
+                options.ClientId = "2571592995-1d5sh0t9p2ao8s6is3r2fa46tmj9s3vg.apps.googleusercontent.com";
+                options.ClientSecret = "zx-o7uE7KXennazj_9HN7-Yj";
+            });
+
             services.AddHttpContextAccessor();
 
             services.AddAuthorization(options =>
