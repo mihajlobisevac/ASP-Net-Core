@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EmployeeManagment.Models;
+using EmployeeManagment.Security;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,6 +54,8 @@ namespace EmployeeManagment
                 options.EnableEndpointRouting = false;
             });
 
+            services.AddHttpContextAccessor();
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminRolePolicy", policy => 
@@ -62,13 +65,16 @@ namespace EmployeeManagment
                     policy.RequireAssertion(context => AuthorizeAccess(context, "Delete Role")));
 
                 options.AddPolicy("EditRolePolicy", policy =>
-                     policy.RequireAssertion(context => AuthorizeAccess(context, "Edit Role")));
+                     policy.AddRequirements(new ManageAdminRolesAndClaimsRequirement()));
 
                 options.AddPolicy("CreateRolePolicy", policy =>
                     policy.RequireAssertion(context => AuthorizeAccess(context, "Create Role")));
             });
 
             services.AddScoped<IEmployeeRepository, SQLEmployeeRepository>();
+
+            services.AddSingleton<IAuthorizationHandler, EditOnlyOtherAdminRolesAndClaimsHandler>();
+            services.AddSingleton<IAuthorizationHandler, SuperAdminHandler>();
         }
 
 
@@ -89,7 +95,10 @@ namespace EmployeeManagment
 
             app.UseAuthentication();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.UseEndpoints(endpoints =>
             {
